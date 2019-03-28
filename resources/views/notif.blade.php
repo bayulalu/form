@@ -16,7 +16,9 @@
                 @endforeach
             </ul>
         </div>
-
+        @php
+            $notif_model::where('user_id', $user->id)->where('seen', 0)->update(['seen' => 1]);
+        @endphp
        
     </div>
 </div>

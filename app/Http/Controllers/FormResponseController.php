@@ -12,6 +12,7 @@ class FormResponseController extends Controller
 {
     public function store(Request $request, $id)
     {
+         // TODO 3 : 1.3 MEMVALIDASI DAN MENYIMPAN TANGGAPAN(KOMENTAR) DARI USER
         $this->validate($request, [
             'subject' => 'required|min:5',
         ]);
@@ -25,7 +26,7 @@ class FormResponseController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-
+    // TODO 4 : 1.2 MENGIRIM NOTIFIKASI KE USER
         if ($form->user->id != Auth::user()->id) {
             Notif::create([
                 'subject' => 'Ada tanggapan dari '. Auth::user()->name,
@@ -49,9 +50,7 @@ class FormResponseController extends Controller
                 
             }
         }
-
-        // dd($form)
-        
+  
         return redirect('/'.$form->slug)->with('msg', 'Pertanyaan Berhasil di Edit');
 
     }

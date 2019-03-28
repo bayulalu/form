@@ -65,6 +65,8 @@ return [
     |
     */
 
+// Todo - 01 : 1.3 MERAPIKAN STRUKTUR FOLDER AUTH 
+
     'providers' => [
         'users' => [
             'driver' => 'eloquent',

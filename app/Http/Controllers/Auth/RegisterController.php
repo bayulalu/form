@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+// Todo - 01 :1.2 MERAPIKAN STRUKTUR FOLDER AUTH 
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
